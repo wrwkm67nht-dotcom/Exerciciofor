@@ -1,0 +1,16 @@
+//Mariana Ribeiro da Silva 
+/*Faça um algoritmo que apresente na tela os quadrados 
+dos 	números inteiros de 15 a 100.
+Exemplo:
+O quadrado de 15 é 225
+ */
+public class Exercicio2 {
+    public static void main(String[] args) {
+
+        for(int num=15; num<=100; num++){
+            int quadrado= num*num;
+            System.out.println("O quadrado de " + num + " é " +quadrado);
+        }
+    }
+
+}
