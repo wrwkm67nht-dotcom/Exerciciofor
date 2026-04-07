@@ -1,0 +1,61 @@
+//Mariana Ribeiro da Silva 
+/* Faça um algoritmo que receba duas notas de 6 alunos, 
+calcule e mostre:
+a) A média aritmética das duas notas de cada aluno;
+b) Forneça a seguinte mensagem de acordo com a nota:
+¨ REPROVADO se média é menor ou igual a 3.
+¨ EXAME se média é acima de 3 e menor que 7.
+¨ APROVADO maior ou igual a 7
+c) O total de alunos aprovados.
+d) O total de alunos de exame.
+e) O total de alunos reprovados.
+f) A média da classe.
+*/
+import java.util.Scanner;
+
+public class Exercicio5 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        double nota1, nota2, media;
+        int aprovados = 0, exame = 0, reprovados = 0;
+        double somaMedias = 0;
+
+        for (int i = 1; i <= 6; i++) {
+            System.out.println("Aluno " + i);
+
+            System.out.print("Digite a primeira nota: ");
+            nota1 = entrada.nextDouble();
+
+            System.out.print("Digite a segunda nota: ");
+            nota2 = entrada.nextDouble();
+
+            media = (nota1 + nota2) / 2;
+            somaMedias += media;
+
+            System.out.println("Média: " + media);
+
+            if (media <= 3) {
+                System.out.println("REPROVADO");
+                reprovados++;
+            } else if (media < 7) {
+                System.out.println("EXAME");
+                exame++;
+            } else {
+                System.out.println("APROVADO");
+                aprovados++;
+            }
+
+            System.out.println();
+        }
+
+        double mediaClasse = somaMedias / 6;
+
+        System.out.println("Total de aprovados: " + aprovados);
+        System.out.println("Total de exame: " + exame);
+        System.out.println("Total de reprovados: " + reprovados);
+        System.out.println("Média da classe: " + mediaClasse);
+
+        entrada.close();
+    }
+}
